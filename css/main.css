@@ -1,91 +1,88 @@
+::selection {
+    background: none;
+   }
 
 html{
 	font-style: normal;
 	margin:0;
+	height: 100%;
+	position: relative;
+	min-height: 100%;
 	padding: 0;
-	font-family: "cordia", sans-serif;
-	background: linear-gradient(to bottom,#0a0e11,#313b44) no-repeat;
+	font-family: 'Roboto', sans-serif;
+	outline: none;
 }
+
 body{
 	width: 100%;
-	height: 100%;
+	position: relative;
 	max-width:100%;
 	padding: 0;
+	padding-bottom: 0px;
+	min-height: 100%;
 	margin: 0;
-	
+	background: linear-gradient(to bottom,#0a0e11,#313b44) no-repeat;
+	background-attachment: fixed;
 }
-h1{
+
+h1,h2{
 	display: block;
 	padding: 0;
 	color: #ececec;
-	margin:0;
-		
+	margin:0;	
 }
-h2{
-	display: block;
-	padding: 0;
-	color: #ececec;
-	margin:0;
-}
+
 img{
 	cursor: pointer;
 	display: block;
+	 -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
-
 
 p{	
 	display: inline-block;
 	margin: 0px;
-
 }
+
+/*main menu*/
+.dpractice,.dinfo,.dquize,.dlessons{
+	width: 64px;
+	height: 64px;
+	background: url(../img/practice.png) no-repeat;
+	background-size: 100%;
+	background-position: 0  0;
+}
+
+.dlessons{
+	background: url(../img/notebook.png) no-repeat;
+}
+
+.dquize{
+	background: url(../img/award.png) no-repeat;
+}
+
+.dinfo{
+	background: url(../img/info.png) no-repeat;
+}
+
+
 .text-ico{
 	color: #7fd7bf;
 }
-.settings{
-	float: right;
-	display: block;
-	margin:15px;
-}
+
+
 .main-text{
 	display: block;
 	margin: 25px 0;
 	float: left;
 	width: 100%;
-
-
 }
+
 .main-text h1, .main-text h2 { 
-text-align: center; }
-
-.menu{
-	display: block;
-	
-	margin:25px auto ;
-}
-.ico1{
-	display: inline-block;
-	text-align: center;
-}
-.ico2{
-	display: inline-block;
-	text-align: center;
-}
-.ico3{
-	display: inline-block;
-	text-align: center;
-}
-.ico4{
-	display: inline-block;
-	text-align: center;
-}
-.footer{
-	float: left;
-	width: 100%;
-}
-.clearfix{
-	display: table;
-	clear: both;
-	content: "";
+	text-align: center; 
 }
 .vline{
 	background: white;
@@ -103,7 +100,49 @@ text-align: center; }
 }
 .menu1,.menu2,.menu3{
 	display: block;
+}
 
+.menu{
+	display: block;
+	padding: 50px ;
+	margin: 25px auto;
+}
+
+.ico1,.ico2,.ico3,.ico4{
+	display: inline-block;
+	text-align: center;
+}
+
+
+/*inputs*/
+input[type="checkbox"]{
+	width: 30px;
+	height: 30px;
+	background: #252e35;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+input{
+	width: 70px;
+	background: #252e35;
+	border: none;
+	outline: none;
+	color: white;
+	padding:10px;
+
+}
+
+
+
+
+
+/*footer*/
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 .footer .f1{
@@ -121,12 +160,241 @@ text-align: center; }
 	color:#ececec;
 }
 
+
+
+
+/* page 2  (practice)*/
+
+.practice h1 {
+	margin: 0 auto;
+	display: block;
+	width: 60%;
+	padding: 5px;
+	text-align: center;
+	padding-bottom: 35px;
+}
+
 .circle{
+	box-shadow: 5px 5px 15px;
 	border-radius: 50%;
-	background: blue;
+	background: #7fd7bf;
 	border: 2px solid white;
 	padding: 15px;
 	width: 150px;
-	height: 150px;
 	
+	margin:15px auto;
+	height: 150px;
+	top: 100px;
+}
+.circle:active{
+	box-shadow: 1px 1px 15px;;
+}
+
+.prev{
+	transform: rotateY(180deg);
+	display: inline-block;
+	margin: 5px;
+	position: absolute;
+}
+.range1{
+	    padding: 5px;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+.range2{
+	padding: 5px;
+}
+.renge3{
+	padding: 5px;
+}
+
+
+/*start page*/
+
+.startbutton{
+	background: #252e35;
+	border: none;
+	outline: none;
+	color: white;
+	padding:15px;
+	margin-top: 50px;
+	font-size: 24px;
+}
+.startbutton:active{
+	background: #2e3740;
+	margin-top: 52px;
+}
+.startbutton:hover{
+	background: #2e3745;
+}
+.cstart{
+	margin-top: 60px;
+	font-size: 24px;
+}
+
+
+
+/*Bootstrap*/
+.white{
+	color: white;
+}
+.clearfix{
+	display: table;
+	clear: both;
+	content: "";
+}
+.layout-positioner{
+	width: 80%;
+	display: block;
+	margin:0 auto;
+	text-align: center;
+}
+p.white{
+	padding: 5px;
+}
+.bold {
+	font-weight: bold;
+}
+
+/*settings*/
+.settingsimg{
+	background: url(../img/settings.png) 100% no-repeat;
+	background-position: 0 0;
+	width:32px;
+	height: 32px;
+}
+
+.settings{
+	float: right;
+	display: block;
+	margin:15px;
+}
+
+
+/*Quize*/
+
+.world-rank,.current-level{
+	display: inline-block;
+	background: #171d22;
+	width: 32%;
+	min-width: 150px;
+	font-size: 24px;
+	max-width: 143px;
+	box-sizing: border-box;
+	margin:5px;
+	
+}
+.wrank{
+	padding: 10px;
+}
+.bottom-rank{
+	background: #12171c;
+	display: block;
+	padding: 8px;
+}
+.status{
+	margin: 5px 0 50px 0;
+}
+.levels{
+	display: block;
+	width: 80%;
+	height: 65px;
+	margin: 15px auto;
+	min-width: 200px;
+	max-width: 400px;
+	color: white;
+	background: rgba(0,0,0,0.5);
+}
+
+.leftblue{
+	background: #0070ff;
+	height: 100%;
+	width: 20px;
+	float: left;
+}
+.lvlcont{
+	display: block;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 15px 30px;
+    text-align: left;
+}
+
+/*Lessons*/
+
+.lessons{
+	display: block;
+	background: #12171c;
+	width: 100%;
+	height: 60px;
+	margin: 20px 0;
+	color: white;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+
+}
+
+.numless{
+	font-size: 35px;
+	padding: 10.5px 20px;
+	background: #0d1115;
+	display: inline-block;
+}
+.titleless{
+	display: inline-block;
+	padding: 10.5px;
+	font-size: 24px;
+
+}
+.spoiler{
+	background: url(../img/down-arrow.png) 50% no-repeat;
+	background-position: 20px 10px;
+	background-size: 60%;
+	cursor: pointer;
+	width: 75px;
+	height: 100%;
+	display: inline-block;
+	float: right;
+}
+.hidenabout{
+	display: none;
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	padding: 15px;
+	background: #3b83b3;
+	position: relative;
+	
+}
+.nextbutton{
+	margin-top: 50px;
+    background: rgba(21,27,31,0);
+    border: 2px solid #3b83b3;
+    outline: none;
+    color: white;
+    padding: 28px 94px;
+    font-size: 24px;
+}
+.bottom-page{
+	
+	margin-top: 85%;
+}
+
+.modal{
+	display: block;
+	width: 100%;
+	height: 40%;
+	background: rgba(0,0,0,0.5);
+}
+
+.result{
+	
+	margin: 25px;
+}
+
+.num{
+	height: 50px;
+	width: 50%;
+	margin:0 auto;
+	font-size: 24px;
+	color: white;
 }

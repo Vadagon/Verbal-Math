@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Acceleration Example</title>
-<script type="text/javascript" charset="utf-8">
-var watchID = null;
-function onLoad(){
-document.addEventListener("deviceready", onDeviceReady, false);
-}
-function onDeviceReady() {
-startWatch();
-}
-function startWatch() {
-var options = { frequency: 10 };
-watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-}
-function stopWatch() {
-if (watchID) {
-navigator.accelerometer.clearWatch(watchID);
-watchID = null;
-}
-}
-function onSuccess(acceleration) {
-var element = document.getElementById('accelerometer');
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<meta charset="UTF-8">
 
-element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-'Acceleration Y: ' + acceleration.y + '<br />' +
-'Acceleration Z: ' + acceleration.z + '<br />' +
-'Timestamp: ' + acceleration.timestamp + '<br />';
-}
-function onError() {
-alert('onError!');
-}
-</script>
+	<link href="http://fonts.googleapis.com/css?family=Roboto:100,200	" rel="stylesheet">
+	<title>Document</title>
+
 </head>
-<body onload="onLoad()">
-<div id="accelerometer">Waiting for accelerometer...</div>
-<button onclick="startWatch();">Start Watching</button>
-<button onclick="stopWatch();">Stop Watching</button>
-<script type="text/javascript" src="cordova.js"></script>
+<body>
+	<div id="page">
+
+		<div class="layout-positioner">
+
+		<h2 >Quize Studio Present</h2>
+  <br><br><br><br><br><br>
+  <h1>Verbal Match Teacher</h1>
+  
+
+
+
+
+
+		<button onclick="loadDocHome()" class="startbutton">START</button>
+
+		</div>
+	</div>
+
+	<div class="footer">
+
+	<p class="f1">Tip of a day</p>
+
+		<div class="f2">
+
+		<p>sleep is also known to enhange your memories and help you...</p>
+		</div>
+	</div>
+  <script type="text/javascript" src="scripts/js.js"></script>
 </body>
 </html>
+
+
