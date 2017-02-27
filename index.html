@@ -1,83 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-<div id="page">
-
-<div class="settings">
-<img  src="img/settings.png" alt="">
-</div>
-
-	<div class="main-text">
-	<h1>VERBAL MATCH</h1>
-	<h2>TEACHER</h2>
-	</div>
-
-	<div class="menu clearfix">
-	<div class="menu1">
-	<div class="ico1"><img src="img/award.png"  alt="">
-
-	<p class="text-ico"  >Quize</p></div>
-	<div class="vline"></div>
-	<div class="ico2" onclick='loadDoc()'
-	><img  src="img/practice.png" alt="">
-
-	<p class="text-ico"  >Practice</p>
-	</div>
-	</div>
-	<div class="menu2">
-	<div class="gline"></div>
-	<div class="gline"></div>
-	</div>
-	<div class="menu3">
-	<div class="ico3">
-	<img  src="img/notebook.png" alt="">
-
-	<p class="text-ico" >Lessons</p>
-	</div>
-	<div class="vline"></div>
-	<div class="ico4">
-	<img  src="img/info.png" alt="">
-
-	<p class="text-ico" >Info</p>
-	</div></div>
-	</div>
-	
-	<div class="footer"><p class="f1">Tip of a day</p>
-
-	<div class="f2">
-	<p>sleep is also known to enhange your memories and help you...</p></div></div>
-	</div>
-</body>
-</html>
-
-
-
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("page").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "practice.html", true);
-  xhttp.send();
+<title>Acceleration Example</title>
+<script type="text/javascript" charset="utf-8">
+var watchID = null;
+function onLoad(){
+document.addEventListener("deviceready", onDeviceReady, false);
 }
-function toMain() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("page").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "index.html", true);
-  xhttp.send();
+function onDeviceReady() {
+startWatch();
+}
+function startWatch() {
+var options = { frequency: 1000 };
+watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+}
+function stopWatch() {
+if (watchID) {
+navigator.accelerometer.clearWatch(watchID);
+watchID = null;
+}
+}
+function onSuccess(acceleration) {
+var element = document.getElementById('accelerometer');
+
+element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+'Acceleration Y: ' + acceleration.y + '<br />' +
+'Acceleration Z: ' + acceleration.z + '<br />' +
+'Timestamp: ' + acceleration.timestamp + '<br />';
+}
+function onError() {
+alert('onError!');
 }
 </script>
+</head>
+<body onload="onLoad()">
+<div id="accelerometer">Waiting for accelerometer...</div>
+<button onclick="startWatch();">Start Watching</button>
+<button onclick="stopWatch();">Stop Watching</button>
+<script type="text/javascript" src="cordova.js"></script>
+</body>
+</html>
