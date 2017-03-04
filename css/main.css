@@ -14,8 +14,8 @@ html{
 }
 
 body{
-	width: 100%;
 	position: relative;
+	width: 100%;
 	max-width:100%;
 	padding: 0;
 	padding-bottom: 0px;
@@ -45,6 +45,11 @@ img{
 p{	
 	display: inline-block;
 	margin: 0px;
+}
+#page{
+	padding-bottom: 10px;
+	height: auto;
+	min-height: 100%;
 }
 
 /*main menu*/
@@ -76,7 +81,7 @@ p{
 
 .main-text{
 	display: block;
-	margin: 25px 0;
+	margin: 10px 0;
 	float: left;
 	width: 100%;
 }
@@ -124,8 +129,10 @@ input[type="checkbox"]{
 }
 
 input{
-	width: 70px;
-	background: #252e35;
+	text-align: center;
+	width: 40px;
+    display: inline-block;
+    background: #252e35;
 	border: none;
 	outline: none;
 	color: white;
@@ -164,16 +171,17 @@ input{
 
 
 /* page 2  (practice)*/
-
+.practice{
+	padding: 10px 15px;
+}
 .practice h1 {
 	margin: 0 auto;
 	display: block;
 	width: 60%;
 	padding: 5px;
 	text-align: center;
-	padding-bottom: 35px;
+	padding-bottom: 20px;
 }
-
 .circle{
 	box-shadow: 5px 5px 15px;
 	border-radius: 50%;
@@ -193,7 +201,7 @@ input{
 .prev{
 	transform: rotateY(180deg);
 	display: inline-block;
-	margin: 5px;
+	margin: 10px;
 	position: absolute;
 }
 .range1{
@@ -246,8 +254,11 @@ input{
 .layout-positioner{
 	width: 80%;
 	display: block;
-	margin:0 auto;
+	margin: 10px auto;
 	text-align: center;
+}
+.quize-positioner{
+	width: 100%;
 }
 p.white{
 	padding: 5px;
@@ -293,12 +304,13 @@ p.white{
 	padding: 8px;
 }
 .status{
-	margin: 5px 0 50px 0;
+	margin: 5px 0 30px 0;
 }
 .levels{
+	font-weight: bold;
 	display: block;
 	width: 80%;
-	height: 65px;
+	height: 50px;
 	margin: 15px auto;
 	min-width: 200px;
 	max-width: 400px;
@@ -313,42 +325,59 @@ p.white{
 	float: left;
 }
 .lvlcont{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 	display: block;
     height: 100%;
     box-sizing: border-box;
-    padding: 15px 30px;
+    padding: 15px 10px;
     text-align: left;
 }
 
 /*Lessons*/
 
 .lessons{
+	border-bottom: 3px solid rgba(255,255,255,0.13);
 	display: block;
-	background: #12171c;
-	width: 100%;
+	background: rgba(0,0,0,0.5);
+	width: 90%;
 	height: 60px;
-	margin: 20px 0;
+	margin: 15px 0;
 	color: white;
-	border-bottom: 1px solid rgba(255,255,255,0.3);
+	margin-left: 5%;
+	position: relative;
 
 }
 
 .numless{
+	position: absolute;
+	left: 0;
+	top: 0;
+    padding: 9px 20px;
+    height: 100%;
 	font-size: 35px;
-	padding: 10.5px 20px;
+	box-sizing: border-box;
 	background: #0d1115;
 	display: inline-block;
 }
 .titleless{
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+	white-space: nowrap;
+	max-width: calc(100% - 160px);
+	width: calc(100% - 135px);
 	display: inline-block;
-	padding: 10.5px;
-	font-size: 24px;
-
+	padding: 19px 0;
+	padding-left: 15px;
+	font-size: 21px;
+    position: relative;
+    margin-left: 60px;
 }
 .spoiler{
 	background: url(../img/down-arrow.png) 50% no-repeat;
-	background-position: 20px 10px;
-	background-size: 60%;
+	background-position: 25px 20px;
+	background-size: 40%;
 	cursor: pointer;
 	width: 75px;
 	height: 100%;
@@ -356,22 +385,37 @@ p.white{
 	float: right;
 }
 .hidenabout{
-	display: none;
+	color: #dcdcdc;
+	visibility: hidden;
 	box-sizing: border-box;
 	width: 100%;
+    line-height: 24px;
 	height: auto;
 	padding: 15px;
-	background: #3b83b3;
+	background: rgba(0,0,0,0.5);
 	position: relative;
 	
 }
+.practiceNow{
+	display: block;
+	padding-top: 10px;
+	margin-bottom: -10px;
+	text-align: center;
+}
+.practiceNow > div{
+	border: 2px solid #33638c;
+	padding: 5px;
+	font-size: 14px;
+	display: inline-block;
+}
 .nextbutton{
-	margin-top: 50px;
+	margin-top: 40px;
     background: rgba(21,27,31,0);
     border: 2px solid #3b83b3;
     outline: none;
     color: white;
-    padding: 28px 94px;
+	width: 75%;
+	padding: 28px 0;
     font-size: 24px;
 }
 .bottom-page{
@@ -387,14 +431,41 @@ p.white{
 }
 
 .result{
-	
-	margin: 25px;
+	text-align: center;
+    width: 60px;
+    display: inline-block;
+    background: #252e35;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    font-weight: lighter;
+    color: white;
+    padding: 10px 25px;
 }
 
 .num{
 	height: 50px;
-	width: 50%;
-	margin:0 auto;
-	font-size: 24px;
+	text-align: center;
+    margin-top: 15px;
+	font-size: 26px;
+    color: #dedede;
+}
+#equalPractice{
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 10px);
+    color: white;
+    font-size: 25px;
+
+}
+#num_equalPractice{
+	position: relative;
+}
+.text_main_style{
+	font-size: 21px;
 	color: white;
+}
+.text_h1_style{
+	font-weight: lighter;
+	font-size: 35px;
 }

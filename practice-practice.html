@@ -1,16 +1,20 @@
-<div onclick="document.querySelector('.num').innerHTML = Number(range1)+' * '+Number(range2)" class="practice">
-		<img class="prev" src="img/next.png" onclick='toMain()'>
-		<h1>Practice</h1>
+<div class="practice">
+		<img class="prev" id="prevPractice" src="img/next.png" onclick='loadDoc()'>
+		<h1 class="text_h1_style">Practice</h1>
 	</div>
-	<div class="num"></div>
+	<div id="num_equalPractice">
+		<div class="num">
+		</div>
+		<div id="equalPractice"></div>
+	</div>
 	
 	<div class="layout-positioner">
 		<div class="layout-positioner">
-			<h1>  </h1><input  class="result" type="number">
+			<h1>  </h1><input onchange="checktrue(12)" class="result" id="result3" type="number">
 		</div>
 			
-		<button id="nextbutton" onclick="toNextLesson()" class="nextbutton">Next</button>
-		<div class="bottom-page"><h1>2/10</h1></div>
+		<button id="nextbutton" onclick="toNextLesson()" class="nextbutton">NEXT</button>
+		<div class="bottom-page text_main_style" id="currentStatePractice"></div>
 
 	</div>
 	

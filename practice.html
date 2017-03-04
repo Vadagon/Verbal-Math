@@ -1,6 +1,6 @@
 	<div class="practice">
 		<img class="prev" src="img/next.png" onclick='toMain()'>
-		<h1>Practice</h1>
+		<h1 class="text_h1_style">Practice</h1>
 	</div>
 
 	<div class="layout-positioner">
@@ -8,19 +8,28 @@
 		<div class="range-n">
 				
 			<div class="range1">
-				<input type="number" onchange=" range1 = this.value" > 
+				<input id="range1" type="number"> 
 					<p class="white"> - </p>
-				 <input type="number" onchange="range2 = this.value">	
+				 <input id="range2" type="number">	
 			</div>
-		
-			<div class="range2">
-				<p class="white">Numbers end with digit:</p><br>
-	
-				<input type="number" value="5"> 
-			</div>
-			<div class="renge3">	
-				<p class="white">simplified numbers:</p> <input type="checkbox"></div>
+
+
+
+
+				<div class="renge3">	
+					<p class="white">&nbsp;&nbsp;divide:&nbsp;&nbsp;</p> <input id="check1" type="checkbox" checked="true">
+				</div>
+				<div class="renge3">	
+					<p class="white">multiply:</p> <input id="check2" type="checkbox" checked="true">
+				</div>
+				<div class="renge3">	
+					<p class="white"><b>simple numbers:</b></p> <input id="check3" type="checkbox">
+				</div>
+
+
+
 		</div>
+
 		
 		<div onclick="loadpractice();" id="circle" class="circle">
 			<div  class="cstart">Start</div>
